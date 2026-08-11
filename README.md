@@ -1,4 +1,4 @@
-# soccer-stats-tracker-java
+# Soccer Stats Tracker
 
 Java application for registering soccer players and tracking position-specific performance statistics.
 
