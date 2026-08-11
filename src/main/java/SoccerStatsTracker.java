@@ -849,149 +849,6 @@ public class SoccerStatsTracker
                 playerCount++;
     }
     
-    
-    
-    public static void playerRegistrationInputs()
-    {
-        boolean isValid;
-                //user  = new Player();
-                //ask for player's age
-                do
-                {
-                    //tries to have the player enter their age
-                    try
-                    {
-                    String input = JOptionPane.showInputDialog("Enter the player's age: ");
-                    int age = Integer.parseInt(input);
-                    user.setAge(age);
-                    isValid = true;
-                    }
-                    //runs if player inputs a number less than 17
-                    catch(NumberFormatException e)
-                    {
-                       JOptionPane.showMessageDialog(null,"ERROR - " + e.getMessage());
-                       isValid = false;
-                    }
-                }
-                while(!isValid);
-
-                //asks for player's name
-                do
-                {
-                    isValid = false;
-
-                    //tries to have the player enter their name
-                    try
-                    {
-                    String input = JOptionPane.showInputDialog("Enter the player's name: ");
-                    user.setName(input);
-                    isValid = true;
-                    }
-                    //runs if player inputs an empty string or not greater than a character
-                    catch(IllegalArgumentException e)
-                    {
-                       JOptionPane.showMessageDialog(null,"ERROR - " + e.getMessage());
-                       isValid = false;
-                    }
-                }
-                while(!isValid);
-
-                //ask for player's minutes played
-                do
-                {
-                    isValid = false;
-
-                    //tries to have the player enter their minutes played
-                    try
-                    {
-                    String input = JOptionPane.showInputDialog("Enter minutes played: ");
-                    int minutes = Integer.parseInt(input); 
-                    user.setMinutesPlayed(minutes);
-                    isValid = true;
-                    }
-                    //runs if player inputs an empty string or not greater than a character
-                    catch(IllegalArgumentException e)
-                    {
-                       JOptionPane.showMessageDialog(null,"ERROR - " + e.getMessage());
-                       isValid = false;
-                    }
-                }
-                while(!isValid);
-
-                //ask for player's games played
-                do
-                {
-                    isValid = false;
-
-                    //tries to have the player enter their games played
-                    try
-                    {
-                    String input = JOptionPane.showInputDialog("Enter games played: ");
-                    int games = Integer.parseInt(input); 
-                    user.setGamesPlayed(games);
-                    isValid = true;
-                    }
-                    //runs if player inputs an empty string or not greater than a character
-                    catch(IllegalArgumentException e)
-                    {
-                       JOptionPane.showMessageDialog(null,"ERROR - " + e.getMessage());
-                       isValid = false;
-                    }
-                }
-                while(!isValid);
-
-                //asks player for their goals scored
-                do
-                {
-                    isValid = false;
-
-                    //tries to have the player enter their goals
-                    try
-                    {
-                    String input = JOptionPane.showInputDialog("Enter goals scored: ");
-                    int goals = Integer.parseInt(input); 
-                    user.setGoals(goals);
-                    isValid = true;
-                    }
-                    //runs if player inputs an empty string or not greater than a character
-                    catch(IllegalArgumentException e)
-                    {
-                       JOptionPane.showMessageDialog(null,"ERROR - " + e.getMessage());
-                       isValid = false;
-                    }
-                }
-                while(!isValid);
-
-                //asks player for their assists made
-                do
-                {
-                    isValid = false;
-
-                    //tries to have the player enter their assists
-                    try
-                    {
-                    String input = JOptionPane.showInputDialog("Enter assists made: ");
-                    int assists = Integer.parseInt(input); 
-                    user.setAssists(assists);
-                    isValid = true;
-                    }
-                    //runs if player inputs an empty string or not greater than a character
-                    catch(IllegalArgumentException e)
-                    {
-                       JOptionPane.showMessageDialog(null,"ERROR - " + e.getMessage());
-                       isValid = false;
-                    }
-                }
-                while(!isValid);
-                JOptionPane.showMessageDialog(null,"Player name: " + user.getName()
-                                          + "\nAge: " + user.getAge() + "\nGoals: " + 
-                                          user.getGoals() + "\nAssists: " + user.getAssists()
-                                          + "\nMinutes Played: " + user.getMinutesPlayed()
-                                            + "\nGames Played: " + user.getGamesPlayed()); 
-                players.add(user);
-                playerCount++;
-    }
-    
     public static void displayPlayer()
     {
         if(players.isEmpty())
@@ -1012,7 +869,7 @@ public class SoccerStatsTracker
                     String input = JOptionPane.showInputDialog(null,"Registered Players: \n" + 
                             playerListMessage + "\n\nWhich player do you want to check?");
                     playerNum = Integer.parseInt(input);
-                    if(playerNum >=0)
+                    if(playerNum >=0 && playerNum <players.size())
                     {              
                         if(players.get(playerNum) instanceof Forward)
                         {
@@ -1021,7 +878,6 @@ public class SoccerStatsTracker
                                             "Player name: " + forward.getName()
                                           + "\nAge: " + forward.getAge() 
                                           + "\nGoals: " + forward.getGoals()
-                                          + "\nHattricks: " + forward.getHattricks()
                                           + "\nAssists: " + forward.getAssists()
                                           + "\nMinutes Played: " + forward.getMinutesPlayed()
                                           + "\nGames Played: " + forward.getGamesPlayed()
