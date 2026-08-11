@@ -79,7 +79,7 @@ public class Player
      */
     public void setGoals(int goals) 
     {
-        if(minutesPlayed > 0 && goals >= 0)
+        if(goals >= 0)
         {
             this.goals = goals;
                 
@@ -96,7 +96,7 @@ public class Player
      */
     public void setAssists(int assists)
     {
-        if(minutesPlayed > 0 && assists >= 0)
+        if(assists >= 0)
         {
             this.assists = assists;
                 
