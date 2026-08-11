@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 /**
  *
  * @author slate
@@ -40,9 +35,10 @@ public class Player
     {
       setName(name);
       setAge(age);
+      setMinutesPlayed(minutesPlayed);
       setGoals(goals);
       setAssists(assists);
-      setMinutesPlayed(minutesPlayed);
+      
       setGamesPlayed(gamesPlayed);
     }
    
