@@ -86,8 +86,7 @@ public class Player
         }
         else
             throw new IllegalArgumentException("Goals must be equal to or greater"
-                    + "than 0, and minutesPlayed must be greater than 0 IF goals"
-                    + "are greater than 0");
+                    + "than 0");
     }
 
     /**
@@ -103,8 +102,7 @@ public class Player
         }
         else
             throw new IllegalArgumentException("Assists must be equal to or greater"
-                    + "than 0, and minutesPlayed must be greater than 0 IF assists"
-                    + "are greater than 0");
+                    + "than 0");
     }
 
     /**
