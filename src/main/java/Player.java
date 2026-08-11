@@ -48,14 +48,14 @@ public class Player
      */
     public void setName(String name)
     {
-        //Checks if empty or character amount is greater than 0
-        if(!name.isEmpty() || name.length() > 0) 
+        //Checks if name is not null and not blank. If true, assigns name to variable
+        if(name != null && !name.isBlank() ) 
         {
             this.name = name;
         }
         //if true, throw a runtimeException to console
         else
-            throw new IllegalArgumentException("Name must be greater than 1 character!");
+            throw new IllegalArgumentException("Name cannot be blank or null");
     }
     
     /**

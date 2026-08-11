@@ -26,43 +26,39 @@ public class Forward extends Player
     {
         super(name, age, goals, assists, minutesPlayed, gamesPlayed);
 
-        setOneVsOneCompleted(oneVsOneCompleted);
         setOneVsOneAttempted(oneVsOneAttempted);
-    }
-
-
-
-    public void setOneVsOneCompleted(int oneVsOneCompleted)
-    {
-        if(oneVsOneCompleted >= 0)
-            this.oneVsOneCompleted = oneVsOneCompleted;
-        else
-            throw new IllegalArgumentException("1v1 completed cannot be negative.");
+        setOneVsOneCompleted(oneVsOneCompleted);
+        
     }
 
     public void setOneVsOneAttempted(int oneVsOneAttempted)
+        {
+            if(oneVsOneAttempted >= 0)
+                this.oneVsOneAttempted = oneVsOneAttempted;
+            else
+                throw new IllegalArgumentException("1v1 attempted cannot be negative.");
+        }
+
+    public void setOneVsOneCompleted(int oneVsOneCompleted)
     {
-        if(oneVsOneAttempted >= 0)
-            this.oneVsOneAttempted = oneVsOneAttempted;
+        if(oneVsOneCompleted >= 0 && oneVsOneCompleted <= oneVsOneAttempted)
+            this.oneVsOneCompleted = oneVsOneCompleted;
         else
-            throw new IllegalArgumentException("1v1 attempted cannot be negative.");
-    }
-
-    public int getHattricks()
-    {
-        return getGoals() / 3;
-    }
-
-    public int getOneVsOneCompleted()
-    {
-        return oneVsOneCompleted;
+            throw new IllegalArgumentException("1v1 completed must be between 0 and 1v1 attempted.");
     }
 
     public int getOneVsOneAttempted()
     {
         return oneVsOneAttempted;
     }
-    
+        
+
+    public int getOneVsOneCompleted()
+    {
+        return oneVsOneCompleted;
+    }
+
+
     public double getOneVsOneSuccessRate()
     {
         
